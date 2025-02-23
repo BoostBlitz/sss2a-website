@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Mode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Mode</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Manage Announcements & Upload Videos</h2>
+        <textarea id="announcement" placeholder="Write an announcement..."></textarea>
+        <button onclick="saveAnnouncement()">Save</button>
+
+        <h2>Upload Video</h2>
+        <input type="file" id="videoUpload">
+        <button onclick="uploadVideo()">Upload</button>
+    </section>
+
+    <script>
+        function saveAnnouncement() {
+            let text = document.getElementById("announcement").value;
+            alert("Announcement saved: " + text);
+        }
+
+        function uploadVideo() {
+            let file = document.getElementById("videoUpload").files[0];
+            if (file) {
+                alert("Video uploaded: " + file.name);
+            } else {
+                alert("No video selected.");
+            }
+        }
+    </script>
+</body>
+</html>
